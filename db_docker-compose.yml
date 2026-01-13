@@ -6,7 +6,8 @@ services:
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - apps_data:/var/lib/postgresql/data 
+      - apps_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql 
     networks:
       - shared_network
 
